@@ -1,13 +1,13 @@
-# RSA and AES Encryption/Decryption Tools
+# RSA and AES Encryption/Decryption Tool
 
 ## Overview
-This repository contains two Python GUI programs for RSA key generation, AES encryption, and decryption using the `cryptography` library. The programs allow users to generate RSA key pairs, encrypt data using AES with a passphrase, and decrypt the data using the RSA private key and passphrase.
+This repository contains two Python GUI programs for RSA key generation, AES encryption, and decryption of plaintext using the `cryptography` library. The programs allow users to generate RSA key pairs, encrypt data using AES with a passphrase, and decrypt the data using the RSA private key and passphrase.
 
-## Program 1: RSA Key Generation, AES Encryption, and Key Storage
+## Program 1: Encryption
 
 ### Steps for Encryption
 1. **Generate RSA Keys**:
-   - Select the RSA key length and public exponent.
+   - Select the RSA key length.
    - Generate an RSA private key and derive the public key from it.
    - Save the private key in a file named `private_key.priv`.
    - Save the public key in a file named `public_key.pub`.
@@ -26,13 +26,7 @@ This repository contains two Python GUI programs for RSA key generation, AES enc
 
 ### Libraries Used
 - **tkinter**:
-  - `tk.Tk()`: Creates the main application window.
-  - `messagebox`: Provides a set of dialogs to show messages.
-  - `filedialog`: Provides a set of dialogs to open or save files.
-  - `ttk.Combobox`: Creates a drop-down menu.
-
-- **cryptography.hazmat.backends**:
-  - `default_backend()`: Provides the default backend for cryptographic operations.
+  Used for GUI functionalities.
 
 - **cryptography.hazmat.primitives**:
   - **asymmetric.rsa**:
@@ -42,8 +36,6 @@ This repository contains two Python GUI programs for RSA key generation, AES enc
     - `public_bytes()`: Serializes the public key.
     - `load_pem_private_key()`: Loads a PEM-formatted private key.
     - `load_pem_public_key()`: Loads a PEM-formatted public key.
-  - **hashes**:
-    - `SHA256`: Specifies the SHA-256 hash algorithm.
   - **padding**:
     - `PKCS7`: Provides PKCS7 padding for block ciphers.
   - **ciphers**:
@@ -52,8 +44,6 @@ This repository contains two Python GUI programs for RSA key generation, AES enc
       - `AES()`: Specifies the AES algorithm.
     - **modes**:
       - `CBC()`: Specifies the CBC mode for AES.
-  - **kdf.pbkdf2**:
-    - `PBKDF2HMAC()`: Derives a key using PBKDF2 HMAC.
 
 ### Functionalities
 1. **switch_to_encrypt_view()**: Switches the GUI to the encrypt view.
@@ -108,14 +98,15 @@ This repository contains two Python GUI programs for RSA key generation, AES enc
 ## Usage
 1. **Program 1**:
    - Run the program.
-   - Generate RSA keys by selecting the key length and public exponent.
+   - Generate RSA keys by selecting the key length.
    - Encrypt data by entering the plaintext, passphrase, and selecting the RSA public key file.
 
 2. **Program 2**:
    - Run the program.
    - Decrypt data by entering the passphrase, selecting the RSA private key file, encrypted AES key file, IV file, and encrypted data file.
 
-## Important Details
+## Important Notes
+- I have used ChatGPT to implement most of the GUI elements and modified it after.
 - The passphrase is used to derive the AES key using PBKDF2HMAC with a constant salt.
 - The AES key is encrypted using the RSA public key and stored separately.
 - The IV used for AES encryption is stored separately.

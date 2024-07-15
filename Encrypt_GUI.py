@@ -50,15 +50,6 @@ def switch_to_initial_view():
     key_length_dropdown.current(0)
     key_length_dropdown.pack(pady=5)
 
-    # Public Exponent Selection
-    public_exponent_label = tk.Label(root, text="Select Public Exponent:")
-    public_exponent_label.pack(pady=10)
-
-    public_exponent_var.set(public_exponent_options[0])
-    public_exponent_dropdown = ttk.Combobox(root, textvariable=public_exponent_var, values=public_exponent_options)
-    public_exponent_dropdown.current(0)
-    public_exponent_dropdown.pack(pady=5)
-
     # Generate Keys Button
     generate_button = tk.Button(root, text="Generate RSA Keys", command=generate_keys)
     generate_button.pack(pady=20)
@@ -66,10 +57,7 @@ def switch_to_initial_view():
 def generate_keys():
     try:
         key_length = int(key_length_var.get())
-        public_exponent = int(public_exponent_var.get())
-        
-        if public_exponent not in [3, 65537]:
-            raise ValueError("Invalid public exponent. Choose one of [3, 65537].")
+        public_exponent = 65537
         
         private_key = rsa.generate_private_key(
             public_exponent=public_exponent,
@@ -197,16 +185,6 @@ key_length_options = [2048, 3072, 4096, 8192]
 key_length_dropdown = ttk.Combobox(root, textvariable=key_length_var, values=key_length_options)
 key_length_dropdown.current(0)
 key_length_dropdown.pack(pady=5)
-
-# Public Exponent Selection
-public_exponent_label = tk.Label(root, text="Select Public Exponent:")
-public_exponent_label.pack(pady=10)
-
-public_exponent_var = tk.StringVar()
-public_exponent_options = [3, 65537]
-public_exponent_dropdown = ttk.Combobox(root, textvariable=public_exponent_var, values=public_exponent_options)
-public_exponent_dropdown.current(0)
-public_exponent_dropdown.pack(pady=5)
 
 # Generate Keys Button
 generate_button = tk.Button(root, text="Generate RSA Keys", command=generate_keys)
