@@ -5,7 +5,7 @@ This repository contains two Python GUI programs for RSA key generation, AES enc
 
 ## Program 1: Encryption
 
-![alt text](images/Screenshot_16.png)![alt text](images/Screenshot_17.png)
+![alt text](images/Screenshot_16.png)![alt text](images/Screenshot_17.png)![alt text](images/Screenshot_18.png)
 
 ### Steps for Encryption
 1. **Generate RSA Keys**:
