@@ -106,7 +106,7 @@ This repository contains two Python GUI programs for RSA key generation, AES enc
    - Decrypt data by entering the passphrase, selecting the RSA private key file, encrypted AES key file, IV file, and encrypted data file.
 
 ## Important Notes
-- I have used ChatGPT to implement most of the GUI elements and modified it after.
+- I have used ChatGPT to help implement most of the GUI elements and modified it after.
 - The passphrase is used to derive the AES key using PBKDF2HMAC with a constant salt.
 - The AES key is encrypted using the RSA public key and stored separately.
 - The IV used for AES encryption is stored separately.
