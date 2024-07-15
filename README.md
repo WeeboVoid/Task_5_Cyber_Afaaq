@@ -51,7 +51,7 @@ This repository contains two Python GUI programs for RSA key generation, AES enc
 3. **generate_keys()**: Generates RSA keys and saves them to files.
 4. **encrypt_data()**: Encrypts data with AES, encrypts the AES key with the RSA public key, and saves the files.
 
-## Program 2: Decrypt Data Using AES with RSA Private Key and Passphrase
+## Program 2: Decryption
 
 ### Steps for Decryption
 1. **Decrypt Data**:
